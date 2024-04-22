@@ -1,68 +1,82 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+main > div > div {
+  background-color: #1b1a55;
+  width: 20px;
+  height: 90px;
+  /* border-radius: 50px; */
+  position: absolute;
+  clip-path: polygon(50% 0px, 100% 10%, 100% 90%, 50% 100%, 0px 90%, 0 10%);
+}
+.leftHour {
+  width: 120px;
+  height: 240px;
+  position: relative;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.top {
+  rotate: 90deg;
+  top: -35px;
+  left: 25px;
+  translate: 120% 0;
 }
-a:hover {
-  color: #535bf2;
+.topL {
+  top: 15px;
+}
+.bottomL {
+  top: 115px;
+}
+.topR {
+  top: 15px;
+  left: calc(100% - 20px);
+}
+.bottomR {
+  top: 115px;
+  left: calc(100% - 20px);
 }
 
-body {
-  margin: 0;
+.bottom {
+  rotate: 90deg;
+  top: 165px;
+  left: 50px;
+}
+
+.semiColon {
+  margin: 10px;
+  translate: 0 -15px;
+  height: 100px;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-between;
+  flex-direction: column;
+  animation: fadeInOut 1s infinite;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.semiColon > div {
+  background-color: white;
+  position: unset;
+  clip-path: none;
+  height: 20px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.mid {
+  rotate: 90deg;
+  top: 65px;
+  left: 50px;
 }
