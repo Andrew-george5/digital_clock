@@ -1,4 +1,4 @@
-function Digit({ className, value }) {
+function Digit({ value }) {
   const topIsOn =
     value === 0 ||
     value === 2 ||
@@ -53,7 +53,7 @@ function Digit({ className, value }) {
     value === 9;
 
   return (
-    <div className={className}>
+    <div className="hour">
       <div className={`top ${topIsOn ? "bg-white" : ""}`}></div>
       <div className={`mid ${midIsOn ? "bg-white" : ""}`}></div>
       <div className={`topL ${topLIsOn ? "bg-white" : ""}`}></div>
